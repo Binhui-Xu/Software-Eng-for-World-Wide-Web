@@ -1,0 +1,7 @@
+127.0.0.1 - - [22/Apr/2021:23:17:49 -0400] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [22/Apr/2021:23:17:49 -0400] "GET /RestfulWS/ HTTP/1.1" 200 7812
+0:0:0:0:0:0:0:1 - - [22/Apr/2021:23:17:49 -0400] "GET /RestfulWS/style.css HTTP/1.1" 404 774
+0:0:0:0:0:0:0:1 - - [22/Apr/2021:23:17:49 -0400] "GET /RestfulWS/index.js HTTP/1.1" 404 773
+0:0:0:0:0:0:0:1 - - [22/Apr/2021:23:17:49 -0400] "GET /RestfulWS/image/biglogo.jpg HTTP/1.1" 404 786
+0:0:0:0:0:0:0:1 - - [22/Apr/2021:23:17:50 -0400] "GET /RestfulWS/image/biglogo.jpg HTTP/1.1" 404 786
+0:0:0:0:0:0:0:1 - - [22/Apr/2021:23:39:05 -0400] "GET /registration-jsp-servlet-hibernate-example/register HTTP/1.1" 404 806

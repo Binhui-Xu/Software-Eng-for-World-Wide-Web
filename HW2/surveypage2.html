@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CS Department</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type= "text/javascript" src="survey.js"></script>
+<!-- <script type= "text/javascript" src="zipcodes.js"></script> -->
+<script type="text/javascript">
+  var now = new Date();
+        var hour = now.getHours();
+        var name;
+
+        if(hour <12){
+            document.write( '<p id="jstext2">'+"Good Morning"+'</p>');
+        }else{
+            hour = hour - 12;
+            if(hour<6){
+                document.write('<p id="jstext2">'+"Good Afternoon"+'</p>');
+            }else{
+                document.write('<p id="jstext2">'+"Good Evening"+'</p>');
+            }
+        }
+       //determine whether there is a cookie
+        if(document.cookie){
+            var myCookie = unescape(document.cookie);
+            var cookieTokens = myCookie.split("=");
+            name = cookieTokens[1];
+        }else{
+            //if there was no cookie, ask the user to input a name
+            name = window.prompt("Please enter your first name!", "Tom")
+            document.cookie = "name" + escape(name);
+        }
+        document.writeln('<p id="jstext">'+name + ", welcome to SWE642 Survey."+'</p>');
+
+        document.writeln('<p id="jstext">'+"<a href = 'javascript:wrongPerson()'> " + "Not " + name + "? Click here" + "</a>"+'</p>');
+</script>
+</head>
+
+<body>
+<nav class="w3-top" style="background-color: #006633"> 
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small" id="navButton" style="color: white">
+      <a href="csdept.html" class="w3-bar-item w3-button">CS Department Page</a>
+    </div>
+</nav>
+
+<hr>
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+  <!-- Welcome Section -->
+  <div class="w3-row w3-padding-64" >
+    <!-- About Section -->
+    <div>
+      <h1 class="w3-center">Leave Your Feedback</h1><br>
+      <h4 class="w3-center">We would like to hear from a prospective student!</h4>
+      <h5 class="w3-center">Please provide your feedback about your campus visit.</h5>
+    </div>
+  </div>
+<hr>
+<!-- survey Section -->
+  <div id="surveyform">
+      <!-- <h1 class="w3-center">Survey Form</h1><br> -->
+      <form class="w3-container w3-card-4" id="sform">
+        <h2>Input Form</h2>
+        <p><label style="color: #ff0000">*</label> are required fields</p>
+        <!-- name -->
+        <div class="w3-section">      
+          <label style="color: #ff0000">*</label><label>Name</label>
+          <input class="w3-input" type="text" id="fullname" name= "full_name" placeholder="Full Name" required autofocus>
+        </div>
+        <!-- address -->
+        <div class="w3-section">      
+          <label style="color: #ff0000">*</label><label>Street Address</label>
+          <input class="w3-input" type="text" id="street" name= "streeAddress" placeholder="Street Address" required>
+        </div>
+        <!-- zip code -->
+        <div class="w3-section">      
+          <label style="color: #ff0000">*</label><label>ZipCode</label>
+          <input class="w3-input" type="number" id="zipcode" name= "zip_code" placeholder="Zip Code" required><label class="zip_code_error" hide>an invalid zip</label>
+          <span id="validateZip" class="validator"></span>
+        </div>
+        <!-- city -->
+        <div class="w3-section">      
+          <label style="color: #ff0000">*</label><label>City</label><!-- <span id="city" class="validator"></span> -->
+          <input class="w3-input" type="text" id="city" name= "city" placeholder="City" required>
+
+        </div>
+        <!-- state -->
+        <div class="w3-section">      
+          <label style="color: #ff0000">*</label><label>State</label><!-- <span id="state" class="validator"></span> -->
+          <input class="w3-input" type="text" id="state" name= "state" placeholder="State" required>
+        </div>
+        <!-- phone number -->
+        <div class="w3-section">      
+          <label style="color: #ff0000">*</label><label>Phone Number</label>
+          <input class="w3-input" type="tel" id="phonum" name= "phone_num" placeholder="123-456-7890" required pattern="\d{3}[\-]\d{3}[\-]\d{4}" required>
+        </div>
+        <!-- e-mail -->
+        <div class="w3-section">      
+          <label style="color: #ff0000">*</label><label>Email</label>
+          <input class="w3-input" type="email" id="email" name= "email" placeholder="johnsmith@email.com" required>
+        </div>
+        <!-- url -->
+        <div class="w3-section">      
+          <label style="color: #ff0000">*</label><label>URL</label>
+          <input class="w3-input" type="url" id="url" name= "URL" placeholder="https://..." required>
+        </div>
+        <!-- data of fill form -->
+        <div class="w3-section">      
+          <label style="color: #ff0000">*</label><label>Data of fill form</label>
+          <input class="w3-input" type="date" id="data" name= "date" placeholder="mm/dd/yyyy" required pattern="\d{2}[\/]\d{2}[\/]\d{4}" required>
+        </div>
+        <!-- most like aboput the campus -->
+        <div class="w3-row">
+        <div class="w3-half">
+          <label>What do your like most of the campus?</label><br>
+          <input id="student" class="w3-check" type="checkbox" name= "likeMost[]"  value="student">
+          <label for="student">Students</label>
+          <br>
+          <input id="location" class="w3-check" type="checkbox" name= "likeMost[]" value="location">
+          <label for="location">Location</label>
+          <br>
+          <input id="campus" class="w3-check" type="checkbox" name= "likeMost[]" value="campus">
+          <label for="campus">Campus</label>
+          <br>
+          <input id="atmosphere" class="w3-check" type="checkbox" name= "likeMost[]" value="atmosphere">
+          <label for="atmosphere">Atmosphere</label>
+          <br>
+          <input id="dorm" class="w3-check" type="checkbox" name= "likeMost[]" value="dorm">
+          <label for="dorm">Dorm</label>
+          <br>
+          <input id="room" class="w3-check" type="checkbox" name= "likeMost[]" value="room">
+          <label for="room">Room</label>
+          <br>
+          <input id="sports" class="w3-check" type="checkbox" name= "likeMost[]" value="sports">
+          <label for="sports">Sports</label>
+          <br><br>
+        </div>
+        <!-- How do you know this University? -->
+        <div class="w3-half" name="radiofield">
+          <label>How do you know this University?</label><br>
+          <input id="friends" class="w3-radio" type="radio" name="method" value="friends" >
+          <label for="friends">Friends</label>
+          <br>
+          <input id="television" class="w3-radio" type="radio" name="method" value="television">
+          <label for="television">Television</label>
+          <br>
+          <input id="internet" class="w3-radio" type="radio" name="method" value="internet">
+          <label for="internet"> Internet</label>
+          <br>
+          <input id="other" class="w3-radio" type="radio" name="method" value="other">
+          <label for="other"> Other</label>
+        </div>
+        </div>
+        <!-- high school graduate -->
+        <div class="w3-row">
+        <div class="w3-half">
+          <label style="color: #ff0000">*</label><label>Data of you high school graduate:</label><br> 
+              <select class="w3-input" name="DOBMonth" required>
+                <option>- Month -</option>
+                <option value="January">January</option>
+                <option value="Febuary">Febuary</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+          </select>
+          <br>
+          <input class="w3-input w3-border" type="number" name= "graduateYear" placeholder="yyyy" required pattern="\d{4}" min="1" max="9999" required>
+          <br>
+          <label style="color: #ff0000">*</label><label>Would you recommend us to your family or friends?</label>
+          <select class="w3-input" name="likely" required>
+              <option >-Please select-</option>
+              <option value="Very Likely">Very Likely</option>
+              <option value="Likely">Likely</option>
+              <option value="Unlikely">Unlikely</option>
+          </select>
+        </div>
+        </div>
+        <br>
+        <div class="w3-row">
+          <label>Leave message to us:</label>
+            <textarea class="w3-input" name="message" placeholder="Your Message" cols="30" rows="10"></textarea>
+            <br>
+            <button class="button" type="submit" onclick="checkForm()">Submit</button>
+            <button class="button" type="submit" onclick="reset()">Reset</button>
+        </div>
+        <div class="w3-row">
+          <div class="w3-section">      
+          <label>Please enter at least ten comma seperated numbers ranging from 1 through 100</label>
+          <input class="w3-input" type="text" onchange="computation()" id="dataBox" name="" placeholder="e.g. 1,2,3,4,5,6,7,8,9,10">
+          </div>
+
+          <div class="w3-section">
+              <label class="labelComp">The average of these numbers is: </label><textarea class="" name="output" id="outputAvr" cols="30" rows="1" readonly="readonly"></textarea>
+          </div>
+          <div class="w3-section">
+              <label class="labelComp">The maximum of these numbers is: </label><textarea name="output" id="outputMax" cols="30" rows="1" readonly="readonly"></textarea>
+          </div>
+        </div>
+  </form>
+  <br>
+  </div>
+<!-- Page content End -->
+</div>
+
+
+<!-- Footer -->
+<footer class="footer">
+
+  <div>
+    <button id="homePageButton"><a href="index.html" class="w3-bar-item w3-button">Back to Homepage</a></button>
+  </div>
+  <div style="color: white;">
+    <p>Department of Computer Science</p>
+    <p>Nguyen Engineering Building</p>
+    <p>4400 University Drive</p>
+    <p>Fairfax, VA 22030</p>
+  </div>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <div id="footerLogo">
+      <a href="https://www2.gmu.edu/"><img src="pictures/biglogo.jpg" alt="GMULogo" id="bigLogo"></a>
+  </div>
+</footer>
+
+</body>
+</html>

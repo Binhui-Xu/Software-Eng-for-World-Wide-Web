@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>tabs demo</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div>
+    
+</div>
+<!-- Navbar (sit on top) -->
+<nav class="w3-top">
+    <div>
+      <a href="https://www2.gmu.edu/"><img src="pictures/biglogo.jpg" alt="gmuLogo" id="bigLogo"></a>
+    </div>
+    <div>
+      <a href="csdept.html" class="w3-bar-item w3-button" id="titleBox"><h1>Department of Computer Science</h1></a>
+    </div>  
+</nav>
+<!--navigation tab -->
+<div id="tabs">
+    <ul>
+        <li><a href="#panel1"><span>HOMEWORKS</span></a></li>
+        <li><a href="#panel2"><span>CS DEPARTMENT PAGE</span></a></li>
+        <li><a href="#panel3"><span>SURVEY PAGES</span></a></li>
+    </ul>
+    <div id="panel1">
+        <p><a href="csdept.html"> HOMEWORK1</a></p>
+        <p><a href="surveypage2.html">HOMEWORK2</a></p>
+    </div>
+    <div id="panel2">
+        <a href="csdept.html"> CS DEPARTMENT PAGE</a>
+    </div>
+    <div id="panel3">
+        <p><a href="surveypage.html"> FIRST VERSION OF SURVEY PAGE</a></p>
+        <p><a href="surveypage2.html">SECOND VERSION OF SURVEY PAGE</a></p>
+    </div>
+</div>
+<!-- Footer -->
+<footer class="footer">
+
+  <div>
+    <button id="homePageButton"><a href="index.html" class="w3-bar-item w3-button">Back to Binhui Xu's Homepage</a></button>
+  </div>
+  <div style="color: white;">
+    <p>Department of Computer Science</p>
+    <p>Nguyen Engineering Building</p>
+    <p>4400 University Drive</p>
+    <p>Fairfax, VA 22030</p>
+  </div>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <div id="footerLogo">
+      <a href="https://www2.gmu.edu/"><img src="pictures/biglogo.jpg" alt="GMULogo" id="bigLogo"></a>
+  </div>
+</footer>
+<script>
+    $( "#tabs" ).tabs();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+body{
+    margin: 0px;
+    background-color:#dbd7d7
+}
+
+nav{
+    position: relative;
+    background-color: #ffcc33;
+    text-align: center;
+    margin: 0px;
+}
+.flex{
+    display: flex;
+}
+
+#titleBox{
+    position: absolute;
+    border: 5px solid #006633;
+    border-width: 5px;
+    box-shadow: 10px 10px 5px 0px gray;
+    width:40%;
+    left:30%;
+    top:5px;
+}
+h1{
+    color: #006633;
+}
+h2{
+    color:white;
+}
+h3{
+    color: #006633;
+}
+
+#surveyPageButton{
+    position: center;
+    border: 5px solid #006633;
+    font-size:30px;
+    padding: 15px 32px;
+    border-radius: 50px;
+    border-width: 5px;
+    text-align: center;
+}
+
+#navButton{
+    position: absolute;
+    left:76%;
+    background-color:#006633;
+    border-color: white;
+    font-size:20px;
+    padding: 15px 32px;
+    border-radius:15px;
+    border-width: 15px;
+}
+
+#homePageButton{
+    position: absolute;
+    left:10%;
+    bottom:15%;
+    background-color:#ffcc33;
+    border-color: white;
+    font-size:20px;
+    padding: 15px 32px;
+    border-radius: 15px;
+    border-width: 5px;
+}
+
+#bigLogo{
+    display: block;
+    height: 150px;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+#programs{
+    list-style: none;
+    width:100%;
+    border-color: black;
+}
+
+ul li{
+    border-bottom: 1px solid black;
+    display:block;
+    width:60%;
+}
+
+.footer{
+    background-color: #006633;
+    text-align: center;
+    position: relative;
+    width:100%;
+}
+
+#footNote{
+   color:white;
+}
+#footerLogo{
+    position:absolute;
+    bottom: 0px;
+    right: 0px;  
+}
+
+form{
+    margin-left:10px;
+    margin-top:30px;
+}
+
+#formNote{
+    color: gray;
+}
+#form{
+    width:80%;
+    display:inline-block;
+}

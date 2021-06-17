@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<title>CS Department</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<nav class="w3-top">
+    <div>
+      <a href="https://www2.gmu.edu/"><img src="pictures/biglogo.jpg" alt="gmuLogo" id="bigLogo"></a>
+    </div>
+    <div>
+      <a href="csdept.html" class="w3-bar-item w3-button" id="titleBox"><h1>Department of Computer Science</h1></a>
+    </div>  
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small" id="navButton" style="color: white">
+      <a href="csdept.html" class="w3-bar-item w3-button">CS Department Page</a>
+    </div>
+</nav>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+  <img class="w3-image" src="pictures/csdeptpic5.jpg" alt="VSE Building1" width="1600" height="800">
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+    <h2 class="w3-xxlarge">CS DEPARTMENT</h2>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+  <!-- Welcome Section -->
+  <div class="w3-row w3-padding-64" >
+    <!-- About Section -->
+    <div>
+      <h1 class="w3-center">Leave Your Feedback</h1><br>
+      <h4 class="w3-center">We would like to hear from a prospective student!</h4>
+      <h5 class="w3-center">Please provide your feedback about your campus visit.</h5>
+    </div>
+  </div>
+
+<hr>
+<!-- survey Section -->
+  <div id="surveyform">
+      <h1 class="w3-center">Survey Form</h1><br>
+      <form class="w3-container w3-card-4">
+        <h2>Input Form</h2>
+        <p><label style="color: #ff0000">*</label> are required fields</p>
+        <!-- name -->
+        <div class="w3-section">      
+          <label style="color: #ff0000">*</label><label>Name</label>
+          <input class="w3-input" type="text" name= "name" placeholder="Full Name" required autofocus>
+        </div>
+        <!-- address -->
+        <div class="w3-section">      
+          <label style="color: #ff0000">*</label><label>Street Address</label>
+          <input class="w3-input" type="text" name= "street address" placeholder="Street Address" required>
+        </div>
+        <!-- city -->
+        <div class="w3-section">      
+          <label style="color: #ff0000">*</label><label>City</label>
+          <input class="w3-input" type="text" name= "city" placeholder="City" required>
+        </div>
+        <!-- state -->
+        <div class="w3-section">      
+          <label style="color: #ff0000">*</label><label>State</label>
+          <input class="w3-input" type="text" name= "state" placeholder="State" required>
+        </div>
+        <!-- zip code -->
+        <div class="w3-section">      
+          <label style="color: #ff0000">*</label><label>Zip Code</label>
+          <input class="w3-input" type="number" name= "zip_code" placeholder="Zip Code" required>
+        </div>
+        
+        <!-- phone number -->
+        <div class="w3-section">      
+          <label style="color: #ff0000">*</label><label>Phone Number</label>
+          <input class="w3-input" type="tel" name= "phone_num" placeholder="123-456-7890" required pattern="\d{3}[\-]\d{3}[\-]\d{4}" required>
+        </div>
+        <!-- e-mail -->
+        <div class="w3-section">      
+          <label style="color: #ff0000">*</label><label>Email</label>
+          <input class="w3-input" type="email" name= "email" placeholder="johnsmith@email.com" required>
+        </div>
+        <!-- url -->
+        <div class="w3-section">      
+          <label style="color: #ff0000">*</label><label>URL</label>
+          <input class="w3-input" type="url" name= "URL" placeholder="https://..." required>
+        </div>
+        <!-- data of fill form -->
+        <div class="w3-section">      
+          <label style="color: #ff0000">*</label><label>Data of fill form</label>
+          <input class="w3-input" type="date" name= "date" placeholder="mm/dd/yyyy" required pattern="\d{2}[\/]\d{2}[\/]\d{4}" required>
+        </div>
+        <!-- most like aboput the campus -->
+        <div class="w3-row">
+        <div class="w3-half">
+          <label>What do your like most of the campus?</label><br>
+          <input id="student" class="w3-check" type="checkbox" name= "likeMost"  value="student">
+          <label>Students</label>
+          <br>
+          <input id="location" class="w3-check" type="checkbox" name= "likeMost" value="location">
+          <label>Location</label>
+          <br>
+          <input id="campus" class="w3-check" type="checkbox" name= "likeMost" value="campus">
+          <label>Campus</label>
+          <br>
+          <input id="atmosphere" class="w3-check" type="checkbox" name= "likeMost" value="atmosphere">
+          <label>Atmosphere</label>
+          <br>
+          <input id="dorm" class="w3-check" type="checkbox" name= "likeMost" value="dorm">
+          <label>Dorm</label>
+          <br>
+          <input id="room" class="w3-check" type="checkbox" name= "likeMost" value="room">
+          <label>Room</label>
+          <br>
+          <input id="sports" class="w3-check" type="checkbox" name= "likeMost" value="sports">
+          <label>Sports</label>
+          <br><br>
+        </div>
+        <!-- How do you know this University? -->
+        <div class="w3-half">
+          <label>How do you know this University?</label><br>
+          <input id="friends" class="w3-radio" type="radio" name="gender" value="friends" >
+          <label>Friends</label>
+          <br>
+          <input id="television" class="w3-radio" type="radio" name="gender" value="television">
+          <label>Television</label>
+          <br>
+          <input id="internet" class="w3-radio" type="radio" name="gender" value="internet">
+          <label> Internet</label>
+          <br>
+          <input id="other" class="w3-radio" type="radio" name="gender" value="other">
+          <label> Other</label>
+        </div>
+        </div>
+        <!-- high school graduate -->
+        <div class="w3-row">
+        <div class="w3-half">
+          <label style="color: #ff0000">*</label><label>Data of you high school graduate:</label><br> 
+              <select class="w3-input" name="DOBMonth" required>
+                <option>- Month -</option>
+                <option value="January">January</option>
+                <option value="Febuary">Febuary</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+          </select>
+          <br>
+          <input class="w3-input w3-border" type="number" name= "graduateYear" placeholder="yyyy" required pattern="\d{4}" min="1" max="9999" required>
+          <br>
+          <label style="color: #ff0000">*</label><label>Would you recommend us to your family or friends?</label>
+          <select class="w3-input" name="likely" required>
+              <option >-Please select-</option>
+              <option value="Very Likely">Very Likely</option>
+              <option value="Likely">Likely</option>
+              <option value="Unlikely">Unlikely</option>
+          </select>
+        </div>
+        </div>
+        <br>
+        <div class="w3-row">
+          <label>Leave message to us:</label>
+            <textarea class="w3-input" name="message" placeholder="Your Message" cols="30" rows="10"></textarea>
+            <br>
+            <button class="button" type="submit">Submit</button>
+        </div>
+  </form>
+  <br>
+  </div>
+<!-- Page content End -->
+</div>
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div>
+    <button id="homePageButton"><a href="index.html" class="w3-bar-item w3-button">Back to Homepage</a></button>
+  </div>
+  <div style="color: white;">
+    <p>Department of Computer Science</p>
+    <p>Nguyen Engineering Building</p>
+    <p>4400 University Drive</p>
+    <p>Fairfax, VA 22030</p>
+  </div>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <div id="footerLogo">
+      <a href="https://www2.gmu.edu/"><img src="pictures/biglogo.jpg" alt="GMULogo" id="bigLogo"></a>
+  </div>
+</footer>
+
+</body>
+</html>
